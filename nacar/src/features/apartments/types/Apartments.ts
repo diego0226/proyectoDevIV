@@ -11,3 +11,10 @@ export interface Apartment {
   amenities: string[];
   featured: boolean;
 }
+
+export interface ApartmentFilters {
+  search: string;
+  location: string;
+  bedrooms: number;
+  maxPrice: number | null;
+}
