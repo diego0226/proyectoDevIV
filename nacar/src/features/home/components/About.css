@@ -1,0 +1,42 @@
+/* Sección sobre Nácar */
+.about {
+  margin-top: 4rem;
+  padding: 3rem 0 0;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Pendiente: falta la imagen, luego se pasa a dos columnas */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* También lo usa ValueProposition */
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: var(--color-dark);
+}
+
+.about__content > p:not(.eyebrow) {
+  color: var(--color-muted);
+}
+
+.text-link {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.text-link:hover {
+  color: var(--color-primary-dark);
+}

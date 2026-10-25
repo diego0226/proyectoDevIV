@@ -1,0 +1,25 @@
+/* Propuesta de valor */
+.value-proposition {
+  padding: 3rem 0 0;
+}
+
+.value-proposition h2 {
+  font-size: 2rem;
+  color: var(--color-dark);
+}
+
+.check-list {
+  margin: 1.25rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check-list li {
+  padding: 0.25rem 0;
+}
+
+.check-list li::before {
+  content: '✓ ';
+  color: var(--color-primary);
+  font-weight: 700;
+}

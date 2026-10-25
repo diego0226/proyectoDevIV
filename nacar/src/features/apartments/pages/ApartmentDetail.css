@@ -1,0 +1,33 @@
+/* Ficha de apartamento */
+.detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: start;
+  gap: 2.5rem;
+  padding-top: 2rem;
+}
+
+.page-section {
+  padding-block: 4rem;
+}
+
+.status-message {
+  margin-block: 0;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.status-message--error {
+  color: var(--color-error);
+}
+
+.empty-state h1 {
+  color: var(--color-dark);
+}
+
+@media (max-width: 900px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
