@@ -1,0 +1,66 @@
+/* Información de la ficha */
+.apartment-info {
+  min-width: 0;
+}
+
+.apartment-info > a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.apartment-info > p:first-of-type {
+  margin: 1rem 0 0.25rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.apartment-info h1 {
+  font-size: 2.4rem;
+  color: var(--color-dark);
+}
+
+.apartment-info__specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0 2rem;
+}
+
+.apartment-info__specs span {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-white);
+  color: var(--color-muted);
+}
+
+.apartment-info__specs strong {
+  color: var(--color-dark);
+}
+
+.apartment-info h2 {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: var(--color-dark);
+}
+
+.apartment-info h2 + p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.apartment-info__amenities {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.apartment-info__amenities li {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-white);
+}
