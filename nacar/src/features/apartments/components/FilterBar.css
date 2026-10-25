@@ -1,0 +1,66 @@
+/* Barra de búsqueda y filtros */
+.filter-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: end;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow);
+}
+
+.filter-bar__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.filter-bar__field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.filter-bar__field input,
+.filter-bar__field select {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.filter-bar__field input:focus,
+.filter-bar__field select:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+  border-color: var(--color-primary);
+}
+
+/* Tableta: la búsqueda ocupa toda la fila y los filtros se reparten abajo */
+@media (min-width: 600px) {
+  .filter-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-bar__field--search {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Computadora: todo en una sola fila */
+@media (min-width: 900px) {
+  .filter-bar {
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+  }
+
+  .filter-bar__field--search {
+    grid-column: auto;
+  }
+}
