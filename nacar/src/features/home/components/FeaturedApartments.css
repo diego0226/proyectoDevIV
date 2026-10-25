@@ -1,0 +1,36 @@
+/* Inicio: selección destacada */
+.featured-apartments {
+  padding-top: 3.5rem;
+}
+
+.featured-apartments > p {
+  margin: 0 0 0.5rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}
+
+.featured-apartments > h2 {
+  display: inline-block;
+  font-size: 2rem;
+  color: var(--color-dark);
+}
+
+.featured-apartments > a {
+  float: right;
+  margin-top: 0.5rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Pendiente: falta el CSS de la lista de tarjetas (le toca a Diego) */
+
+@media (max-width: 600px) {
+  .featured-apartments > a {
+    float: none;
+    display: block;
+    margin: 0 0 0.5rem;
+  }
+}
