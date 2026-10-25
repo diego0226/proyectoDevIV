@@ -1,6 +1,4 @@
 /* Barra de navegación */
-/* PENDIENTE: falta el CSS global (index.css) con las variables --color-* y la
-   clase .container; ninguna de las tablas de fases lo tiene asignado. */
 .navbar {
   position: sticky;
   top: 0;

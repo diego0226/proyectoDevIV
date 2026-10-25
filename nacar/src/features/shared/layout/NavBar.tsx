@@ -11,8 +11,7 @@ const NavBar = () => {
   return (
     <header className="navbar">
       <div className="container navbar__inner">
-        {/* PENDIENTE: la app de autos usa un componente Logo; aquí se usa
-            assets/logo.svg porque Logo no está asignado a nadie en las fases. */}
+        {/* Pendiente: falta el componente Logo, mientras tanto se usa logo.svg */}
         <NavLink
           to="/"
           className="navbar__brand"
