@@ -1,0 +1,71 @@
+.footer {
+  margin-top: auto;
+  background-color: var(--color-dark);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-block: 3rem;
+}
+
+.footer__logo {
+  font-family: Georgia, serif;
+  font-size: 1.75rem;
+  color: var(--color-white);
+}
+
+.footer__brand p {
+  max-width: 320px;
+  margin: 0.5rem 0 0;
+}
+
+.footer h2 {
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer a:hover {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.footer__cta p {
+  margin: 0 0 0.75rem;
+}
+
+.footer__cta-link {
+  color: #8fd1a8;
+  font-weight: 600;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer__bottom p {
+  margin: 0;
+  padding-block: 1.25rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 2fr 1fr 1.5fr;
+  }
+}
