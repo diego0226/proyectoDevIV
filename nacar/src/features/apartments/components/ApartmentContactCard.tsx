@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Apartment } from "../types/Apartments";
 import { formatPrice } from "../../shared/utils/formatPrice";
+import FavoriteButton from "../../favorites/components/FavoriteButton";
 import "./ApartmentContactCard.css";
 
 interface ApartmentContactCardProps {
@@ -21,13 +22,19 @@ const ApartmentContactCard = ({ apartment }: ApartmentContactCardProps) => {
         compromiso.
       </p>
 
-      {/* El id viaja en la URL para que el formulario de contacto quede prellenado */}
+      
       <Link
         className="btn btn--primary apartment-contact-card__button"
         to={`/contacto?propiedad=${apartment.id}`}
       >
         Solicitar una visita
       </Link>
+
+      <FavoriteButton
+        apartmentId={apartment.id}
+        apartmentName={apartment.name}
+        variant="full"
+      />
     </aside>
   );
 };

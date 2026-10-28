@@ -10,3 +10,10 @@ export interface FavoritesContextType {
 export interface FavoritesProviderProps {
   children: ReactNode;
 }
+
+export interface FavoriteButtonProps {
+  apartmentId: number;
+  apartmentName: string;
+  
+  variant?: "icon" | "full";
+}
