@@ -1,0 +1,47 @@
+/* Información de contacto */
+.contact-info h1 {
+  font-size: 2rem;
+  color: var(--color-dark);
+}
+
+.contact-info > p {
+  margin: 0 0 1rem;
+  max-width: 45ch;
+  color: var(--color-muted);
+}
+
+.contact-info__details {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-info__details p {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.contact-info__details strong {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 600px) {
+  .contact-info h1 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Computadora: la información queda fija mientras se baja por el formulario.
+   El top deja espacio para el NavBar, que mide 64px y también es sticky */
+@media (min-width: 900px) {
+  .contact-info {
+    position: sticky;
+    top: 88px;
+  }
+}

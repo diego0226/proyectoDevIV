@@ -5,5 +5,3 @@ export interface ContactFormData {
   propertyId: string;
   message: string;
 }
-
-export type ContactFormErrors = Partial<Record<keyof ContactFormData, string>>;
