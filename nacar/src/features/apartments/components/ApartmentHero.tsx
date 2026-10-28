@@ -8,7 +8,9 @@ interface ApartmentHeroProps {
 const ApartmentHero = ({ apartment }: ApartmentHeroProps) => {
   return (
     <div className="apartment-hero">
-      <img src={apartment.image} alt={`Foto de ${apartment.name}`} />
+      <div className="apartment-hero__media">
+        <img src={apartment.image} alt={`Foto de ${apartment.name}`} />
+      </div>
     </div>
   );
 };

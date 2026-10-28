@@ -1,33 +1,21 @@
 /* Ficha de apartamento */
+.detail-page {
+  padding-top: clamp(0.5rem, 1.5vw, 1rem);
+  padding-bottom: var(--space-section);
+}
+
 .detail-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
   gap: 2.5rem;
-  padding-top: 2rem;
 }
 
-.page-section {
-  padding-block: 4rem;
-}
-
-.status-message {
-  margin-block: 0;
-  color: var(--color-muted);
-  text-align: center;
-}
-
-.status-message--error {
-  color: var(--color-error);
-}
-
-.empty-state h1 {
-  color: var(--color-dark);
-}
-
-@media (max-width: 900px) {
+@media (min-width: 960px) {
   .detail-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+    gap: clamp(3rem, 6vw, 6rem);
   }
 }

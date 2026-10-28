@@ -1,18 +1,60 @@
-/* Imagen principal de la ficha */
+/* Imagen principal de la ficha: panorámica con esquinas suaves */
 .apartment-hero {
-  background-color: var(--color-dark);
+  position: relative;
+  overflow: hidden;
+  height: clamp(300px, 70svh, 760px);
+  margin-inline: clamp(0.75rem, 2vw, 1.5rem);
+  border-radius: var(--radius-lg);
+  background-color: var(--ink);
+}
+
+/* Entra abriéndose desde el centro */
+.apartment-hero__media {
+  height: 100%;
+  animation: detail-unveil 1.3s var(--ease-in-out) both;
+}
+
+@keyframes detail-unveil {
+  from {
+    clip-path: inset(10% 8% 10% 8% round var(--radius-lg));
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 0);
+  }
 }
 
 .apartment-hero img {
   width: 100%;
-  max-width: 1100px;
-  height: 420px;
-  margin: 0 auto;
+  height: 100%;
   object-fit: cover;
+  transform: scale(1.05);
 }
 
-@media (max-width: 800px) {
-  .apartment-hero img {
-    height: 240px;
+/* Degradado inferior para dar profundidad */
+.apartment-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(24, 23, 20, 0.4), transparent 45%);
+  pointer-events: none;
+}
+
+/* Al bajar, la foto se acerca lentamente */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .apartment-hero img {
+      animation: detail-zoom linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 80vh;
+    }
+  }
+}
+
+@keyframes detail-zoom {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1.18) translateY(5%);
   }
 }

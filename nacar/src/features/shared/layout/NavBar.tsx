@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../../assets/logo.svg";
 import "./NavBar.css";
 
 const NavBar = () => {
@@ -17,7 +16,8 @@ const NavBar = () => {
           aria-label="Nácar — Inicio"
           onClick={closeMenu}
         >
-          <img src={logo} alt="Nácar" />
+          <span className="navbar__mark" aria-hidden="true" />
+          <span className="navbar__wordmark">Nácar</span>
         </NavLink>
 
         <button
@@ -27,7 +27,8 @@ const NavBar = () => {
           aria-expanded={isOpen}
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? "✕" : "☰"}
+          <span className="navbar__toggle-line" aria-hidden="true" />
+          <span className="navbar__toggle-line" aria-hidden="true" />
         </button>
 
         <nav

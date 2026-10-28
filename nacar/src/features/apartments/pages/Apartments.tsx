@@ -140,7 +140,7 @@ const Apartments = () => {
   return (
     <section className="apartments-page container">
       <header className="apartments-page__header">
-        <p className="apartments-page__eyebrow">Catálogo Nácar</p>
+        <p className="eyebrow apartments-page__eyebrow">Catálogo Nácar</p>
         <h1>Apartamentos</h1>
         <p>
           Explore nuestra colección y filtre por ubicación, habitaciones o

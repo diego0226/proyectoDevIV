@@ -9,37 +9,47 @@ interface ApartmentInfoProps {
 const ApartmentInfo = ({ apartment }: ApartmentInfoProps) => {
   return (
     <section className="apartment-info">
-      <Link to="/apartamentos">← Volver a apartamentos</Link>
+      <Link className="text-link apartment-info__back" to="/apartamentos">
+        <span className="arrow arrow--back" aria-hidden="true">←</span> Volver a
+        apartamentos
+      </Link>
 
-      <p>{apartment.location}</p>
+      <p className="eyebrow apartment-info__location">{apartment.location}</p>
 
-      <h1>{apartment.name}</h1>
+      <h1 className="apartment-info__title">{apartment.name}</h1>
 
-      <div className="apartment-info__specs">
-        <span>
-          <strong>{apartment.bedrooms}</strong> habitaciones
-        </span>
+      <dl className="apartment-info__specs">
+        <div>
+          <dt>habitaciones</dt>
+          <dd>{apartment.bedrooms}</dd>
+        </div>
 
-        <span>
-          <strong>{apartment.bathrooms}</strong> baños
-        </span>
+        <div>
+          <dt>baños</dt>
+          <dd>{apartment.bathrooms}</dd>
+        </div>
 
-        <span>
-          <strong>{apartment.area.toLocaleString("es-CR")}</strong> m²
-        </span>
+        <div>
+          <dt>m²</dt>
+          <dd>{apartment.area.toLocaleString("es-CR")}</dd>
+        </div>
+      </dl>
+
+      <div className="apartment-info__block reveal">
+        <h2>Descripción</h2>
+
+        <p className="apartment-info__description">{apartment.description}</p>
       </div>
 
-      <h2>Descripción</h2>
+      <div className="apartment-info__block reveal">
+        <h2>Amenidades</h2>
 
-      <p>{apartment.description}</p>
-
-      <h2>Amenidades</h2>
-
-      <ul className="apartment-info__amenities">
-        {apartment.amenities.map((amenity) => (
-          <li key={amenity}>✓ {amenity}</li>
-        ))}
-      </ul>
+        <ul className="apartment-info__amenities">
+          {apartment.amenities.map((amenity) => (
+            <li key={amenity}>{amenity}</li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 };

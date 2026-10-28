@@ -190,7 +190,7 @@ const ContactForm = () => {
         </div>
 
         <button
-          className="btn btn--primary contact-form__submit"
+          className="btn btn--primary btn--arrow contact-form__submit"
           type="submit"
         >
           Enviar solicitud

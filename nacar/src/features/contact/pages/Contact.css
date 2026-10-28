@@ -1,17 +1,16 @@
 /* Página de contacto */
 .contact-page {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  padding-block: 2rem 3rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(3rem, 6vw, 5rem);
+  padding-block: clamp(3rem, 6vw, 6rem) var(--space-section);
 }
 
 /* Computadora: información a la izquierda y formulario a la derecha */
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .contact-page {
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
     align-items: start;
-    gap: 4rem;
-    padding-block: 3rem 4rem;
+    gap: clamp(4rem, 7vw, 7rem);
   }
 }

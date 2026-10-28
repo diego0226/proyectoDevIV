@@ -12,12 +12,19 @@ const FeaturedApartments = () => {
   } = useFetch<Apartment[]>("/data/apartments.json");
 
   if (isLoading) {
-    return <p className="container">Cargando apartamentos...</p>;
+    return (
+      <p className="container status-message featured-apartments__status">
+        Cargando apartamentos...
+      </p>
+    );
   }
 
   if (error) {
     return (
-      <p role="alert" className="container">
+      <p
+        role="alert"
+        className="container status-message status-message--error featured-apartments__status"
+      >
         {error}
       </p>
     );
@@ -32,14 +39,24 @@ const FeaturedApartments = () => {
   }
 
   return (
-    <section className="featured-apartments container">
-      <p>Selección destacada</p>
+    <section className="featured-apartments">
+      <div className="container">
+        <header className="featured-apartments__head reveal">
+          <div>
+            <p className="eyebrow">Selección destacada</p>
 
-      <h2>Conozca la colección</h2>
+            <h2>
+              Conozca <em>la colección</em>
+            </h2>
+          </div>
 
-      <Link to="/apartamentos">Ver todos los apartamentos →</Link>
+          <Link className="text-link" to="/apartamentos">
+            Ver todos los apartamentos <span className="arrow" aria-hidden="true">→</span>
+          </Link>
+        </header>
 
-      <ApartmentCardList apartments={featuredApartments} />
+        <ApartmentCardList apartments={featuredApartments} />
+      </div>
     </section>
   );
 };

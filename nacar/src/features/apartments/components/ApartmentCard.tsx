@@ -44,7 +44,7 @@ const ApartmentCard = ({ apartment }: ApartmentCardProps) => {
             to={`/apartamentos/${apartment.id}`}
             aria-label={`Ver detalle de ${apartment.name}`}
           >
-            Ver detalle →
+            Ver detalle <span className="arrow" aria-hidden="true">→</span>
           </Link>
         </div>
       </div>

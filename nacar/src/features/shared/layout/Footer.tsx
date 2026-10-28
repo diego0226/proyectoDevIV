@@ -39,11 +39,15 @@ const Footer = () => {
         <div className="footer__cta">
           <h2>¿Le interesa un apartamento?</h2>
           <p>Escríbanos y coordinamos una visita sin compromiso.</p>
-          <Link to="/contacto" className="footer__cta-link">
-            Solicitar una visita →
+          <Link to="/contacto" className="btn btn--light btn--arrow footer__cta-link">
+            Solicitar una visita
           </Link>
         </div>
       </div>
+
+      <p className="footer__wordmark" aria-hidden="true">
+        Nácar
+      </p>
 
       <div className="footer__bottom">
         <div className="container">
