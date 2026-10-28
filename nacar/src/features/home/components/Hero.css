@@ -4,10 +4,9 @@
   background-color: var(--color-white);
 }
 
-/* Pendiente: falta la imagen, luego se pasa a dos columnas */
 .hero__inner {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 2.5rem;
 }
@@ -49,6 +48,10 @@
 @media (max-width: 800px) {
   .hero {
     padding: 2.5rem 0;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
   }
 
   .hero__title {

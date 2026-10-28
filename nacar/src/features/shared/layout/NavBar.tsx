@@ -11,7 +11,6 @@ const NavBar = () => {
   return (
     <header className="navbar">
       <div className="container navbar__inner">
-        {/* Pendiente: falta el componente Logo, mientras tanto se usa logo.svg */}
         <NavLink
           to="/"
           className="navbar__brand"
