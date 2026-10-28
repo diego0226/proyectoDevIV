@@ -1,0 +1,61 @@
+/* Página de favoritos */
+.favorites-page {
+  padding-block: 2rem 3rem;
+}
+
+.favorites-page__header h1 {
+  font-size: 2rem;
+  color: var(--color-dark);
+}
+
+.favorites-page__header p {
+  margin: 0;
+  max-width: 560px;
+  color: var(--color-muted);
+}
+
+.favorites-page__count {
+  margin: 1.5rem 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* Estados de carga y error */
+.favorites-page__status {
+  margin: 3rem 0 0;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.favorites-page__status--error {
+  color: var(--color-error);
+}
+
+/* Sin favoritos: mismo estilo que el estado vacío del catálogo */
+.favorites-page__empty {
+  margin-top: 2rem;
+  padding: 3rem 1.5rem;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.favorites-page__empty h2 {
+  color: var(--color-dark);
+}
+
+.favorites-page__empty p {
+  margin: 0 auto 1.5rem;
+  max-width: 45ch;
+  color: var(--color-muted);
+}
+
+@media (min-width: 600px) {
+  .favorites-page {
+    padding-block: 3rem 4rem;
+  }
+
+  .favorites-page__header h1 {
+    font-size: 2.4rem;
+  }
+}

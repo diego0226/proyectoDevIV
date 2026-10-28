@@ -1,0 +1,70 @@
+/* Botón de favoritos */
+.favorite-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+/* Corazón: solo borde cuando no es favorito, relleno cuando sí lo es */
+.favorite-button svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.favorite-button[aria-pressed="true"] svg {
+  fill: currentColor;
+}
+
+.favorite-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Variante de ícono: esquina superior derecha de la imagen de la tarjeta
+   (.apartment-card__media ya tiene position: relative) */
+.favorite-button--icon {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.favorite-button--icon:hover {
+  transform: scale(1.08);
+  color: var(--color-primary);
+}
+
+.favorite-button--icon[aria-pressed="true"] {
+  color: var(--color-primary);
+}
+
+/* Variante con texto: botón de ancho completo en el detalle */
+.favorite-button--full {
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+.favorite-button--full[aria-pressed="true"] {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.favorite-button--full[aria-pressed="true"]:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
