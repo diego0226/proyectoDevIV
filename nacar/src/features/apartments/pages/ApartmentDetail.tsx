@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import "./ApartmentDetail.css";
 import ApartmentHero from "../components/ApartmentHero";
 import ApartmentInfo from "../components/ApartmentInfo";
+import ApartmentContactCard from "../components/ApartmentContactCard";
 import { useFetch } from "../../shared/hooks/useFetch";
 import type { Apartment } from "../types/Apartments";
 
@@ -54,7 +55,7 @@ const ApartmentDetail = () => {
       <div className="container detail-grid">
         <ApartmentInfo apartment={apartment} />
 
-        {/* Pendiente: falta ApartmentContactCard de Jered */}
+        <ApartmentContactCard apartment={apartment} />
       </div>
     </article>
   );
