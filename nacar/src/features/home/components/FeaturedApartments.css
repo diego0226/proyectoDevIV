@@ -25,7 +25,10 @@
   font-weight: 600;
 }
 
-/* Pendiente: falta el CSS de la lista de tarjetas (le toca a Diego) */
+/* La lista queda debajo del enlace flotante */
+.featured-apartments .apartment-card-list {
+  clear: both;
+}
 
 @media (max-width: 600px) {
   .featured-apartments > a {

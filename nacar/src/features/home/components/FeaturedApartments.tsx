@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useFetch } from "../../shared/hooks/useFetch";
+import ApartmentCardList from "../../apartments/components/ApartmentCardList";
 import type { Apartment } from "../../apartments/types/Apartments";
 import "./FeaturedApartments.css";
 
@@ -38,7 +39,7 @@ const FeaturedApartments = () => {
 
       <Link to="/apartamentos">Ver todos los apartamentos →</Link>
 
-      {/* Pendiente: falta ApartmentCardList de Diego */}
+      <ApartmentCardList apartments={featuredApartments} />
     </section>
   );
 };

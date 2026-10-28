@@ -5,7 +5,12 @@ const About = () => {
   return (
     <section className="about">
       <div className="container about__grid">
-        {/* Pendiente: falta la imagen */}
+        <img
+          className="about__image"
+          src="/images/apartments/apartment-03.jpg"
+          alt="Sala luminosa de un penthouse con vista a la ciudad"
+        />
+
         <div className="about__content">
           <p className="eyebrow">Sobre Nácar</p>
           <h2>Su próximo hogar empieza aquí</h2>

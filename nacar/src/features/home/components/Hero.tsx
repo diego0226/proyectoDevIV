@@ -26,7 +26,11 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Pendiente: falta la imagen (esperar las imágenes de Diego) */}
+        <img
+          className="hero__image"
+          src="/images/apartments/apartment-01.jpg"
+          alt="Sala de un apartamento moderno con ventanales"
+        />
       </div>
     </section>
   );
