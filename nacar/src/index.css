@@ -54,6 +54,7 @@
 
   /* Tipografía */
   --font-display: "Instrument Serif", "Times New Roman", serif;
+  --font-brand: "Cinzel", "Times New Roman", serif;
   --font-sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --fs-display: clamp(3rem, 1.4rem + 5.6vw, 6.75rem);

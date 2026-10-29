@@ -16,8 +16,17 @@ const NavBar = () => {
           aria-label="Nácar — Inicio"
           onClick={closeMenu}
         >
-          <span className="navbar__mark" aria-hidden="true" />
-          <span className="navbar__wordmark">Nácar</span>
+          <img
+            className="navbar__logo"
+            src="/images/logo/nacar-emblema.png"
+            alt=""
+            width="48"
+            height="48"
+          />
+          <span className="navbar__wordmark">
+            Nácar
+            <span className="navbar__tagline">Residencias de lujo</span>
+          </span>
         </NavLink>
 
         <button

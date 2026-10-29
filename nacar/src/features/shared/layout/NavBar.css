@@ -34,33 +34,48 @@
   height: var(--nav-h);
 }
 
-/* Marca: una perla y el nombre en serif */
+/* Marca: emblema del logo y el nombre con su tipografía */
 .navbar__brand {
   position: relative;
   z-index: 2;
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  font-family: var(--font-display);
-  font-size: 1.95rem;
-  line-height: 1;
-  letter-spacing: -0.01em;
+  gap: 0.75rem;
   color: var(--ink);
 }
 
-.navbar__mark {
-  width: 1.05rem;
-  height: 1.05rem;
-  border-radius: 50%;
-  background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.95), transparent 45%),
-    var(--sheen);
-  box-shadow: inset 0 0 0 1px rgba(24, 23, 20, 0.14),
-    0 2px 6px rgba(24, 23, 20, 0.12);
-  transition: transform 0.9s var(--ease-out);
+/* Sobre el fondo claro se refuerzan los bordes para que el nácar no se pierda */
+.navbar__logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: contrast(1.35) brightness(0.88) drop-shadow(0 1px 1.5px rgba(24, 23, 20, 0.35));
+  transition: transform 0.8s var(--ease-out);
 }
 
-.navbar__brand:hover .navbar__mark {
-  transform: rotate(200deg) scale(1.12);
+.navbar__brand:hover .navbar__logo {
+  transform: rotate(-8deg) scale(1.06);
+}
+
+.navbar__wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: var(--font-brand);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.navbar__tagline {
+  font-family: var(--font-sans);
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  color: var(--stone);
 }
 
 /* Enlaces de escritorio */
@@ -185,8 +200,13 @@
     --nav-h: 64px;
   }
 
-  .navbar__brand {
-    font-size: 1.7rem;
+  .navbar__logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .navbar__wordmark {
+    font-size: 1.2rem;
   }
 
   .navbar__toggle {
