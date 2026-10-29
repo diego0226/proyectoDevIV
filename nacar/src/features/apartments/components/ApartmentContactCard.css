@@ -1,44 +1,95 @@
-/* Tarjeta de precio y contacto en el detalle */
+/* Tarjeta de precio y contacto en el detalle: oscura, flota sobre la foto */
 .apartment-contact-card {
-  padding: 1.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  background-color: var(--color-white);
-  box-shadow: var(--shadow);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  border-radius: var(--radius-lg);
+  background-color: var(--ink);
+  color: var(--on-dark);
+  box-shadow: var(--shadow-lift);
+  animation: rise 1s var(--ease-out) 0.5s both;
+}
+
+/* Reflejo nacarado en la esquina */
+.apartment-contact-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -40%;
+  right: -35%;
+  width: 80%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--sheen);
+  filter: blur(60px);
+  opacity: 0.22;
 }
 
 .apartment-contact-card__label {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: var(--fs-label);
   font-weight: 600;
-  color: var(--color-muted);
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  color: var(--on-dark-muted);
 }
 
 .apartment-contact-card__price {
-  margin: 0.3rem 0 0.75rem;
-  font-size: 2rem;
-  color: var(--color-primary-dark);
+  margin: 0.6rem 0 1rem;
+  font-size: clamp(2.4rem, 1.9rem + 1.8vw, 3.4rem);
+  line-height: 1;
+  color: var(--shell);
+  font-variant-numeric: lining-nums;
 }
 
 .apartment-contact-card__description {
-  margin: 0 0 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--color-border);
-  color: var(--color-muted);
+  margin: 0 0 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--line-dark);
 }
 
 .apartment-contact-card__button {
-  display: block;
-  text-align: center;
+  width: 100%;
 }
 
-/* Computadora: la tarjeta queda fija mientras se baja por la información.
-   El top deja espacio para el NavBar, que mide 64px y también es sticky */
-@media (min-width: 900px) {
+/* Botones adaptados al fondo oscuro */
+.apartment-contact-card .btn--primary {
+  border-color: var(--shell);
+  background-color: var(--shell);
+  color: var(--ink);
+}
+
+.apartment-contact-card .btn--primary::before {
+  background-color: var(--moss-light);
+}
+
+.apartment-contact-card .btn--outline {
+  border-color: rgba(251, 249, 245, 0.28);
+  color: var(--shell);
+}
+
+.apartment-contact-card .btn--outline::before {
+  background-color: var(--shell);
+}
+
+.apartment-contact-card .btn--outline:hover {
+  border-color: var(--shell);
+  color: var(--ink);
+}
+
+.apartment-contact-card .favorite-button--full[aria-pressed="true"] {
+  border-color: var(--moss-light);
+  background-color: var(--moss-light);
+  color: var(--ink);
+}
+
+/* Computadora: la tarjeta queda fija mientras se baja por la información
+   y se monta sobre el borde inferior de la foto */
+@media (min-width: 960px) {
   .apartment-contact-card {
     position: sticky;
-    top: 88px;
+    top: calc(var(--nav-h) + 1.5rem);
+    margin-top: -9rem;
   }
 }

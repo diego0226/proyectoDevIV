@@ -10,7 +10,18 @@ const Footer = () => {
       <div className="container footer__grid">
         <div className="footer__brand">
           <Link to="/" className="footer__logo" aria-label="Nácar — Inicio">
-            Nácar
+            <img
+              className="footer__emblem"
+              src="/images/logo/nacar-emblema.png"
+              alt=""
+              width="88"
+              height="88"
+              loading="lazy"
+            />
+            <span className="footer__wordmark-small">
+              Nácar
+              <span>Residencias de lujo</span>
+            </span>
           </Link>
           <p>
             Apartamentos de lujo en Costa Rica, del Valle Central a las playas
@@ -39,11 +50,15 @@ const Footer = () => {
         <div className="footer__cta">
           <h2>¿Le interesa un apartamento?</h2>
           <p>Escríbanos y coordinamos una visita sin compromiso.</p>
-          <Link to="/contacto" className="footer__cta-link">
-            Solicitar una visita →
+          <Link to="/contacto" className="btn btn--light btn--arrow footer__cta-link">
+            Solicitar una visita
           </Link>
         </div>
       </div>
+
+      <p className="footer__wordmark" aria-hidden="true">
+        Nácar
+      </p>
 
       <div className="footer__bottom">
         <div className="container">

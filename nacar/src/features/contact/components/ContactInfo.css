@@ -1,47 +1,63 @@
 /* Información de contacto */
 .contact-info h1 {
-  font-size: 2rem;
-  color: var(--color-dark);
+  margin-bottom: 1.75rem;
+  font-size: var(--fs-h1);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  animation: rise 1s var(--ease-out) both;
 }
 
 .contact-info > p {
-  margin: 0 0 1rem;
-  max-width: 45ch;
-  color: var(--color-muted);
+  max-width: 42ch;
+  margin: 0;
+  font-size: var(--fs-lead);
+  color: var(--stone);
+  animation: rise-sm 0.9s var(--ease-out) 0.2s both;
 }
 
+/* Detalles numerados como un índice */
 .contact-info__details {
-  display: grid;
-  gap: 1rem;
-  margin: 2rem 0 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--color-border);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  counter-reset: detail;
+  animation: rise-sm 0.9s var(--ease-out) 0.35s both;
 }
 
 .contact-info__details p {
+  position: relative;
   margin: 0;
-  color: var(--color-text);
+  padding: 1.4rem 0 1.4rem 3.75rem;
+  border-top: 1px solid var(--line);
+  color: var(--stone);
+  counter-increment: detail;
+}
+
+.contact-info__details p:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-info__details p::before {
+  content: counter(detail, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 1.85rem;
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--moss);
 }
 
 .contact-info__details strong {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--ink);
 }
 
-@media (min-width: 600px) {
-  .contact-info h1 {
-    font-size: 2.4rem;
-  }
-}
-
-/* Computadora: la información queda fija mientras se baja por el formulario.
-   El top deja espacio para el NavBar, que mide 64px y también es sticky */
-@media (min-width: 900px) {
+/* Computadora: la información queda fija mientras se baja por el formulario */
+@media (min-width: 960px) {
   .contact-info {
     position: sticky;
-    top: 88px;
+    top: calc(var(--nav-h) + 2rem);
   }
 }

@@ -3,7 +3,9 @@ import "./ContactInfo.css";
 const ContactInfo = () => {
   return (
     <div className="contact-info">
-      <h1>Conversemos sobre su próximo apartamento</h1>
+      <h1>
+        Conversemos sobre su <em>próximo apartamento</em>
+      </h1>
       <p>
         Cuéntenos qué apartamento le interesa y le ayudamos a coordinar una
         visita privada o a resolver sus dudas, sin compromiso.
