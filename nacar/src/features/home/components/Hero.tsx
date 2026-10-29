@@ -1,19 +1,18 @@
 import { Link } from "react-router-dom";
 import "./Hero.css";
 
-// Zonas de la colección para la franja animada
-const LOCATIONS = [
-  "Escazú",
-  "Santa Ana",
-  "Rohrmoser",
-  "Curridabat",
-  "Jacó",
-  "Tamarindo",
-];
-
 const Hero = () => {
   return (
     <section className="hero">
+      <div className="hero__media">
+        <img
+          className="hero__image"
+          src="/images/apartments/apartment-13.jpg"
+          alt="Piscina infinita frente al océano Pacífico"
+          fetchPriority="high"
+        />
+      </div>
+
       <div className="container hero__inner">
         <div className="hero__content">
           <p className="eyebrow hero__eyebrow">Nácar · Costa Rica</p>
@@ -38,38 +37,20 @@ const Hero = () => {
           </p>
 
           <div className="hero__actions">
-            <Link to="/apartamentos" className="btn btn--primary btn--arrow">
+            <Link to="/apartamentos" className="btn btn--light btn--arrow">
               Explorar apartamentos
             </Link>
 
-            <Link to="/contacto" className="btn btn--outline">
+            <Link to="/contacto" className="btn btn--ghost">
               Contactar
             </Link>
           </div>
         </div>
 
-        <figure className="hero__visual">
-          <div className="hero__arch">
-            <img
-              className="hero__image"
-              src="/images/apartments/apartment-01.jpg"
-              alt="Sala de un apartamento moderno con ventanales"
-            />
-          </div>
-
-          <figcaption className="hero__caption">
-            <span className="hero__caption-label">Escazú</span>
-            Torre Alba 1201
-          </figcaption>
-        </figure>
-      </div>
-
-      <div className="hero__ribbon" aria-hidden="true">
-        <div className="hero__ribbon-track">
-          {[...LOCATIONS, ...LOCATIONS].map((location, index) => (
-            <span key={index}>{location}</span>
-          ))}
-        </div>
+        <p className="hero__caption">
+          <span className="hero__caption-label">Jacó · Pacífico</span>
+          Marea Alta 1002
+        </p>
       </div>
     </section>
   );
