@@ -1,0 +1,53 @@
+/* Inicio: selección destacada */
+.featured-apartments {
+  padding-bottom: var(--space-section);
+}
+
+.featured-apartments__status {
+  padding-block: 4rem;
+}
+
+.featured-apartments__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.featured-apartments__head h2 {
+  margin: 0;
+  font-size: var(--fs-h2);
+}
+
+/* Composición asimétrica: una pieza protagonista y dos de apoyo */
+@media (min-width: 900px) {
+  .featured-apartments .apartment-card-list {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    align-items: stretch;
+    row-gap: 3rem;
+  }
+
+  .featured-apartments .apartment-card-list > li:nth-child(n) {
+    margin-top: 0;
+  }
+
+  .featured-apartments .apartment-card-list > li:first-child {
+    grid-row: span 2;
+  }
+
+  .featured-apartments .apartment-card-list > li:first-child .apartment-card__media {
+    flex: 1;
+    aspect-ratio: auto;
+    min-height: 420px;
+  }
+
+  .featured-apartments .apartment-card-list > li:first-child .apartment-card__name {
+    font-size: clamp(2rem, 1.4rem + 1.4vw, 2.9rem);
+  }
+
+  .featured-apartments .apartment-card-list > li:not(:first-child) .apartment-card__media {
+    aspect-ratio: 16 / 10;
+  }
+}

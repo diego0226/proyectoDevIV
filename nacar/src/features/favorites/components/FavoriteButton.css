@@ -1,0 +1,86 @@
+/* Botón de favoritos */
+.favorite-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+/* Corazón: solo borde cuando no es favorito, relleno cuando sí lo es */
+.favorite-button svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+  transition: fill 0.3s;
+}
+
+.favorite-button[aria-pressed="true"] svg {
+  fill: currentColor;
+  animation: heart-pop 0.55s var(--ease-out);
+}
+
+@keyframes heart-pop {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.35);
+  }
+  65% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.favorite-button:focus-visible {
+  outline: 2px solid var(--moss);
+  outline-offset: 3px;
+}
+
+/* Variante de ícono: esquina superior derecha de la imagen de la tarjeta
+   (.apartment-card__media ya tiene position: relative) */
+.favorite-button--icon {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(251, 249, 245, 0.82);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: var(--ink);
+  transition: transform 0.45s var(--ease-out), background-color 0.3s, color 0.3s;
+}
+
+.favorite-button--icon:hover {
+  transform: scale(1.1);
+  background-color: var(--shell);
+}
+
+.favorite-button--icon[aria-pressed="true"] {
+  background-color: var(--shell);
+  color: var(--moss);
+}
+
+/* Variante con texto: botón de ancho completo en el detalle */
+.favorite-button--full {
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+.favorite-button--full[aria-pressed="true"] {
+  border-color: var(--moss);
+  background-color: var(--moss);
+  color: var(--shell);
+}

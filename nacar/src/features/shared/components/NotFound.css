@@ -1,0 +1,58 @@
+/* Página no encontrada (404) */
+.not-found {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 4rem 1rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* "404" gigante y hueco detrás del texto */
+.not-found__code {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(9rem, 32vw, 20rem);
+  font-weight: 800;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-border);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* El contenido queda por encima del número de fondo */
+.not-found__title,
+.not-found__text,
+.not-found__actions {
+  position: relative;
+}
+
+.not-found__title {
+  font-size: 2rem;
+  color: var(--color-dark);
+}
+
+.not-found__text {
+  margin: 0 0 2rem;
+  max-width: 45ch;
+  color: var(--color-muted);
+}
+
+.not-found__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .not-found__title {
+    font-size: 2.6rem;
+  }
+}

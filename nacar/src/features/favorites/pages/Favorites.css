@@ -1,0 +1,103 @@
+/* Página de favoritos */
+.favorites-page {
+  padding-block: clamp(3rem, 6vw, 6rem) var(--space-section);
+}
+
+.favorites-page__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: end;
+  gap: 1.25rem var(--gutter);
+}
+
+.favorites-page__header h1 {
+  margin: 0;
+  font-size: var(--fs-display);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  animation: rise 1s var(--ease-out) both;
+}
+
+.favorites-page__header p {
+  max-width: 40ch;
+  margin: 0;
+  font-size: var(--fs-lead);
+  color: var(--stone);
+  animation: rise-sm 0.9s var(--ease-out) 0.2s both;
+}
+
+/* Conteo con línea, igual que en el catálogo */
+.favorites-page__count {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: clamp(2.5rem, 5vw, 4rem) 0 2.25rem;
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.favorites-page__count::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--line);
+}
+
+/* Estados de carga y error */
+.favorites-page__status {
+  margin: 4rem 0 0;
+  color: var(--stone);
+  text-align: center;
+}
+
+.favorites-page__status--error {
+  color: var(--error);
+}
+
+/* Sin favoritos: un corazón dentro de una perla */
+.favorites-page__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(3rem, 8vw, 6rem) 1.5rem;
+  border-block: 1px solid var(--line);
+  text-align: center;
+  animation: rise-sm 0.8s var(--ease-out) 0.3s both;
+}
+
+.favorites-page__empty::before {
+  content: "";
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-bottom: 2rem;
+  border-radius: 50%;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24'><path d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z' fill='none' stroke='%23181714' stroke-width='1.4' stroke-linejoin='round'/></svg>")
+      no-repeat center,
+    var(--sheen);
+  box-shadow: inset 0 0 0 1px rgba(24, 23, 20, 0.14), var(--shadow);
+}
+
+.favorites-page__empty h2 {
+  font-size: var(--fs-h2);
+}
+
+.favorites-page__empty p {
+  max-width: 42ch;
+  margin: 0 auto 2rem;
+  color: var(--stone);
+}
+
+@media (min-width: 900px) {
+  .favorites-page__header {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+
+  .favorites-page__header p {
+    justify-self: end;
+    padding-bottom: 0.75rem;
+  }
+}

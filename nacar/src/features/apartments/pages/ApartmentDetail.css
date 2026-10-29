@@ -1,0 +1,21 @@
+/* Ficha de apartamento */
+.detail-page {
+  padding-top: clamp(0.5rem, 1.5vw, 1rem);
+  padding-bottom: var(--space-section);
+}
+
+.detail-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 2.5rem;
+}
+
+@media (min-width: 960px) {
+  .detail-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+    gap: clamp(3rem, 6vw, 6rem);
+  }
+}

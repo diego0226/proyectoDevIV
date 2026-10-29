@@ -1,0 +1,183 @@
+/* Sección sobre Nácar: una lámina oscura que sube al llegar */
+.about {
+  position: relative;
+  overflow: clip;
+  padding-block: var(--space-section);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background-color: var(--moss-deep);
+  color: var(--on-dark);
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .about {
+      animation: about-sheet linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+  }
+}
+
+@keyframes about-sheet {
+  from {
+    clip-path: inset(0 4% 0 4% round var(--radius-lg) var(--radius-lg) 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0 round var(--radius-lg) var(--radius-lg) 0 0);
+  }
+}
+
+/* Titular grande a la izquierda, texto y botón abajo a la derecha */
+.about__intro {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: end;
+  gap: 2rem var(--gutter);
+  margin-bottom: clamp(3rem, 6vw, 5.5rem);
+}
+
+.about__heading {
+  grid-column: 1 / span 7;
+}
+
+.about__heading .eyebrow {
+  color: var(--moss-light);
+}
+
+.about__heading h2 {
+  margin: 0;
+  font-size: clamp(2.8rem, 1.6rem + 4.4vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  color: var(--shell);
+}
+
+.about__heading h2 em {
+  color: var(--moss-light);
+}
+
+.about__content {
+  grid-column: 8 / -1;
+  justify-self: end;
+  padding-bottom: 0.5rem;
+}
+
+.about__content .btn {
+  white-space: nowrap;
+}
+
+.about__content p {
+  max-width: 34ch;
+  margin-bottom: 2rem;
+  font-size: var(--fs-lead);
+}
+
+/* Imagen panorámica: se abre como un ventanal al bajar */
+.about__media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 21 / 9;
+  border-radius: var(--radius-lg);
+  background-color: var(--ink);
+}
+
+.about__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 62%;
+}
+
+/* Velo inferior para la ficha */
+.about__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(14, 18, 16, 0.65), transparent 45%);
+  pointer-events: none;
+}
+
+.about__caption {
+  position: absolute;
+  left: clamp(1.25rem, 3vw, 2.5rem);
+  bottom: clamp(1.25rem, 3vw, 2.25rem);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-left: 1.1rem;
+  border-left: 1px solid rgba(251, 249, 245, 0.55);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 1rem + 0.9vw, 1.75rem);
+  line-height: 1.1;
+  color: var(--shell);
+}
+
+.about__caption span {
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(251, 249, 245, 0.75);
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .about__media {
+      animation: about-open linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 50%;
+    }
+
+    .about__image {
+      animation: about-zoom linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 0%;
+    }
+  }
+}
+
+@keyframes about-open {
+  from {
+    clip-path: inset(0 18% round var(--radius-lg));
+  }
+  to {
+    clip-path: inset(0 0 round var(--radius-lg));
+  }
+}
+
+@keyframes about-zoom {
+  from {
+    transform: scale(1.25);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 899px) {
+  .about__heading,
+  .about__content {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .about__media {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 560px) {
+  .about__media {
+    aspect-ratio: 4 / 5;
+  }
+
+  .about__image {
+    object-position: 62% 60%;
+  }
+
+  .about__content .btn {
+    width: 100%;
+  }
+}

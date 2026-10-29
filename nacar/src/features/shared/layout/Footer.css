@@ -1,0 +1,176 @@
+/* Pie de página */
+.footer {
+  position: relative;
+  overflow: hidden;
+  margin-top: auto;
+  background-color: var(--ink);
+  color: var(--on-dark-muted);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  padding-block: clamp(4.5rem, 9vw, 8rem) clamp(2rem, 5vw, 4rem);
+}
+
+/* Logo completo: emblema arriba, nombre y lema debajo */
+.footer__logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+  color: var(--shell);
+}
+
+.footer__emblem {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.footer__logo:hover .footer__emblem {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+.footer__wordmark-small {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: var(--font-brand);
+  font-size: 1.9rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footer__wordmark-small span {
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--on-dark-muted);
+}
+
+.footer__brand p {
+  max-width: 32ch;
+  margin: 1.5rem 0 0;
+}
+
+.footer h2 {
+  margin-bottom: 1.25rem;
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--on-dark-muted);
+}
+
+.footer__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Enlaces en serif que se inclinan y avanzan al pasar el cursor */
+.footer__nav a {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1.25;
+  color: var(--on-dark);
+  transition: color 0.3s, transform 0.5s var(--ease-out);
+}
+
+.footer__nav a:hover {
+  font-style: italic;
+  color: var(--shell);
+  transform: translateX(0.4rem);
+}
+
+.footer__cta h2 {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 1.3rem + 1.6vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--shell);
+}
+
+.footer__cta p {
+  margin: 0 0 1.75rem;
+  color: var(--on-dark);
+}
+
+/* Gran nombre de marca con el brillo nacarado */
+.footer__wordmark {
+  margin: 0;
+  padding-inline: var(--gutter);
+  font-family: var(--font-brand);
+  font-size: clamp(3.5rem, 17vw, 17rem);
+  font-weight: 500;
+  line-height: 0.85;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  color: transparent;
+  background-image: var(--sheen-linear);
+  background-size: 250% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  opacity: 0.92;
+  transform: translateY(12%);
+  user-select: none;
+}
+
+/* El brillo se desliza mientras se baja hasta el final */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .footer__wordmark {
+      animation: footer-sheen linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 0%;
+    }
+  }
+}
+
+@keyframes footer-sheen {
+  from {
+    background-position: 0% 50%;
+    transform: translateY(40%);
+  }
+  to {
+    background-position: 100% 50%;
+    transform: translateY(12%);
+  }
+}
+
+.footer__bottom {
+  position: relative;
+  border-top: 1px solid var(--line-dark);
+  background-color: var(--ink);
+}
+
+.footer__bottom p {
+  margin: 0;
+  padding-block: 1.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+@media (min-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 1.3fr 1fr 1.4fr;
+    gap: var(--gutter);
+  }
+}

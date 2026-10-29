@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Nácar</string>
+    <string name="title_activity_main">Nácar</string>
+    <string name="package_name">com.nacar.app</string>
+    <string name="custom_url_scheme">com.nacar.app</string>
+</resources>
