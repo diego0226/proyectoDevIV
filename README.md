@@ -12,7 +12,7 @@ Proyecto #1 · IF0009 Desarrollo de Software IV · Universidad de Costa Rica, Se
 
 | Recurso | Enlace |
 | --- | --- |
-| Versión publicada (Vercel) | **PENDIENTE: pegar la URL de Vercel** |
+| Versión publicada (Vercel) | https://proyecto-dev-iv.vercel.app |
 | Repositorio | https://github.com/diego0226/proyectoDevIV |
 | Evidencia Android | [Captura en el emulador](#evidencia-en-android) |
 
